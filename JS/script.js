@@ -18,20 +18,20 @@ let loader = document.querySelector(".loader");
 let extra = document.querySelector(".extra");
 var heading = document.querySelector(".heading-blog");
 let category = document.querySelector(".category");
-var blog_type=document.querySelector("#blog-type");
+var blog_type = document.querySelector("#blog-type");
 var blogText = document.querySelector(".input");
-var authorName=document.querySelector(".authorinput");
-var blog_name= document.querySelector(".name_blog");
+var authorName = document.querySelector(".authorinput");
+var blog_name = document.querySelector(".name_blog");
 // signup and login
 // let flag = false;
 
 let codingblogs = [];
-let foodblogs=[];
-let travelblogs=[];
-let beautyblogs=[];
+let foodblogs = [];
+let travelblogs = [];
+let beautyblogs = [];
 
 
- codingblogs = [
+codingblogs = [
   {
     Name: "Java Constructor",
     topictext: "This is a blog on java constructor",
@@ -55,20 +55,20 @@ let beautyblogs=[];
     We will also see how the methods are different from the constructors in Java. A Constructor is a member function which has the same name as its class and is used to initialize the object of that class type with the legal initial value.”
 
     A constructor is a member function of a class that is called for initializing objects when we create an object of that class. It is a special type of method that instantiates a newly created object and just after the memory allocation of this object takes place, the constructor is called.`,
-  }, 
+  },
 ];
 travelblogs = [
   {
     Name: "Travel Blog1",
     topictext: "I love travelling.... read this blog to know my journey",
     author: " ~ Komal",
-    text:""
+    text: ""
   },
   {
     Name: "Travel Blog2",
     topictext: "I love travelling.... read this blog to know my journey",
     author: " ~ monika",
-    text:""
+    text: ""
   }
 ];
 foodblogs = [
@@ -76,33 +76,33 @@ foodblogs = [
     Name: "Burger",
     topictext: "My yummy experience of burgers on various places",
     author: "~ Harshita",
-    text:""
+    text: ""
   },
   {
     Name: "Chilli Potato",
     topictext: "Let's see whats happens when I ate chilli potato first time",
     author: "~ Sushmita Ray",
-    text:""
+    text: ""
   }
 ];
- beautyblogs=[
+beautyblogs = [
   {
     Name: "Saloon",
     topictext: "my experience of the the best saloon",
     author: "~ alka",
-    text:""
+    text: ""
   },
   {
     Name: "Face cream",
     topictext: "My best ever favourite face cream",
     author: "~ isha",
-    text:""
+    text: ""
   },
 ]
 
 
-blog_type.onchange = function() {
-    category.value = blog_type.value;
+blog_type.onchange = function () {
+  category.value = blog_type.value;
 }
 
 write.addEventListener("click", function () {
@@ -114,13 +114,13 @@ write.addEventListener("click", function () {
 });
 
 // write.addEventListener("click", (e) => {
-  // e.preventDefault();
+// e.preventDefault();
 
-  backBtn.addEventListener("click", function () {
-    editor.style.display = "none";
-    mainHome.style.display = "block";
-    editorBtn.style.display = "none";
-  });
+backBtn.addEventListener("click", function () {
+  editor.style.display = "none";
+  mainHome.style.display = "block";
+  editorBtn.style.display = "none";
+});
 // });
 
 let output = document.querySelector(".input");
@@ -147,18 +147,20 @@ publishBtn.addEventListener("click", function () {
   loaderBtn.style.display = "block";
   loader.style.display = "block";
 
-  var obj={Name:blog_name.value,
-  topictext:heading.value,
-author:authorName.value,
-text:blogText.value}
+  var obj = {
+    Name: blog_name.value,
+    topictext: heading.value,
+    author: authorName.value,
+    text: blogText.value
+  }
   console.log(obj)
-  if(blog_type.value=="Coding"){
-codingblogs.push(obj);
-  }else if(blog_type.value=="Food"){
-foodblogs.push(obj);
-  }else if(blog_type.value=="Travel"){
-travelblogs.push(obj);
-  }else{
+  if (blog_type.value == "Coding") {
+    codingblogs.push(obj);
+  } else if (blog_type.value == "Food") {
+    foodblogs.push(obj);
+  } else if (blog_type.value == "Travel") {
+    travelblogs.push(obj);
+  } else {
     beautyblogs.push(obj);
   }
 
@@ -186,9 +188,9 @@ coding.addEventListener("click", function () {
   travel.classList.remove("select");
   beauty.classList.remove("select");
   home.innerHTML = "";
-  var c='';
-  for(var i=0;i<codingblogs.length;i++){
-c+=` <div class="article" id="arts="article" id="art-1">
+  var c = '';
+  for (var i = 0; i < codingblogs.length; i++) {
+    c += ` <div class="article" id="arts="article" id="art-1">
 <h2>${codingblogs[i].Name}</h2>
 <div class="para-text"><p>${codingblogs[i].topictext}</p></div>
 <h3>${codingblogs[i].author}</h3>
@@ -215,9 +217,9 @@ food.addEventListener("click", function () {
   travel.classList.remove("select");
   beauty.classList.remove("select");
   home.innerHTML = "";
-  var c='';
-  for(var i=0;i<foodblogs.length;i++){
-    c+=`<div class="article" id="art-1">
+  var c = '';
+  for (var i = 0; i < foodblogs.length; i++) {
+    c += `<div class="article" id="art-1">
     <h2>${foodblogs[i].Name}</h2>
     <div class="para-text"><p>${foodblogs[i].topictext}</p></div>
     <h3>${foodblogs[i].author}</h3>
@@ -234,9 +236,9 @@ travel.addEventListener("click", function () {
   coding.classList.remove("select");
   beauty.classList.remove("select");
   home.innerHTML = "";
-  var c='';
-  for(i=0;i<travelblogs.length;i++){
-    c+=` <div class="article" id="art-1">
+  var c = '';
+  for (i = 0; i < travelblogs.length; i++) {
+    c += ` <div class="article" id="art-1">
     <h2>${travelblogs[i].Name}</h2>
     <div class="para-text"><p>${travelblogs[i].topictext} </p></div>
     <h3>${travelblogs[i].author}</h3>
@@ -253,9 +255,9 @@ beauty.addEventListener("click", function () {
   travel.classList.remove("select");
   coding.classList.remove("select");
   home.innerHTML = "";
-  var c='';
-  for(var i=0;i<beautyblogs.length;i++){
-    c+=` <div class="article" id="art-1">
+  var c = '';
+  for (var i = 0; i < beautyblogs.length; i++) {
+    c += ` <div class="article" id="art-1">
     <h2>${beautyblogs[i].Name}</h2>
     <div class="para-text"><p>${beautyblogs[i].topictext} </p></div>
     <h3>${beautyblogs[i].author}</h3>
